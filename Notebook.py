@@ -87,5 +87,33 @@
 
 # [выражение for элемент in итерабельный объект if условие]
 
-a_list = [number for number in range(1,6) if number % 2 == 1]
-print(a_list)
+# a_list = [number for number in range(1,6) if number % 2 == 1]
+# print(a_list)
+
+# number_list = []
+
+# for number in range(0,6):
+	# number_list.append(number)
+# print(number_list)
+
+# number_list = list(range(1, 6))
+
+jack = {
+		'name':'jack',
+		'car': 'bmw'
+}
+
+john = {
+		'name':'john',
+		'car': 'audi'
+}
+
+users = [jack, john]
+
+# cars = [person['car'] for person in users]
+# print(cars)
+
+
+
+
+
