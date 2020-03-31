@@ -114,6 +114,42 @@ users = [jack, john]
 # print(cars)
 
 
+# # Выводит или площадь или периметр прямоугольника в зависимости от формального значения
+
+# def setS(a, b):
+	# return (a * 0.5) * b
+
+# # (setS(10, 15))
+
+# x = setS(10, 20)
+# def setSP(x, typ='-1'):
+	
+	# if  int(typ) < 0:
+		# print(x)
+	# else:
+		# print((10 + 10) * 2)
+
+# setSP(x, 15)
+
+
+# поиск максимального значения из спискок
+# lst = list(range(1, 101))
+# lst2 = list(range(200, 401))
+
+# lst.extend(lst2)
+
+# def get_max(lst):
+	# lst.sort()
+	# print(lst[-1])
+# get_max(lst)
+
+lst = [2, 4, 8, 12] 
+
+for i in lst:
+	su = i * lst[]
+	print(su)
+	
+
 
 
 
