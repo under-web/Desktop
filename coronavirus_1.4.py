@@ -1,3 +1,4 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 
@@ -11,6 +12,7 @@ def get_page(html, html0, html1):
 	soup = BeautifulSoup(html, 'lxml')
 	soup0 = BeautifulSoup(html0, 'lxml')
 	soup1 = BeautifulSoup(html1, 'lxml')
+	
 	hazard = soup.find('div', class_='total_block col-lg-2 col-sm-4 col-xs-6 offset-md-1').find('span', class_='num').text
 	hazard = hazard.split('+')
 	try:
@@ -21,6 +23,11 @@ def get_page(html, html0, html1):
 		print(hazard[1].center(50), 'Прибавилось',  '\n')
 	except:
 		pass	
+	print()
+	print()
+	
+	
+	print()
 	activ = soup.find_all('div', class_='total_block col-lg-2 col-sm-4 col-xs-6')
 	for i in activ:
 		tx = i.text
@@ -35,17 +42,24 @@ def get_page(html, html0, html1):
 	print()
 	print()
 	print('----------------------------------------------------------')
-	# news1_time = soup1.find('ul', class_='news_list news_list_big').find_all('span', class_='news_time')
 	news1_txt = soup1.find('ul', class_='news_list news_list_big').find_all('li')
-	# for y in news1_time:
-		# ty = y.text
+	
+	h = 0
+	
 	for z in news1_txt:
-		yt = z.text
-		print(yt.strip())
+		if h <= 50:
+			yt = z.text
+			print(yt.strip())
+			h += 1
+		else:
+			break
 	print('\n', 'Данные взяты из "https://kazan.mk.ru/news/"'.center(80))
 	print()
 	print('----------------------------------------------------------')
+	
+
 def main():
+
 	url = 'https://coronavirus-info.ru/'
 	url_news = 'https://www.gazeta.ru/subjects/virus.shtml'
 	url_news1 = 'https://kazan.mk.ru/news/'
@@ -53,9 +67,10 @@ def main():
 	html = get_html(url)
 	html0 = get_html(url_news)
 	html1 = get_html(url_news1)
-	get_page(html, html0, html1)
 	
-
+	get_page(html, html0, html1)
+	os.system("C:\\Users\\lammer\\Desktop\\coronarus.py")
+	input()
 
 
 
