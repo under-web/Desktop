@@ -52,11 +52,23 @@ def get_page(html):
 		print('\n', 'Данные взяты из "https://kazan.mk.ru/news/"'.center(80))
 	except:
 		pass
-	
-	
+	print()
+	try:
+		ross = soup.find('div', class_='col-xs-12 col-md-8').find_all('ul')
+		for i in ross:
+			print(i.text, '\n')
+	except:
+		pass
+
+
+
 def main():
 	
-	url_list = ['https://yandex.ru/', 'https://coronavirus-info.ru/', 'https://www.gazeta.ru/subjects/virus.shtml', 'https://kazan.mk.ru/news/', ]
+	url_list = ['https://yandex.ru/', 
+	'https://coronavirus-info.ru/', 
+	'https://www.gazeta.ru/subjects/virus.shtml', 
+	'https://kazan.mk.ru/news/', 
+	'https://mirasskajem.ru/koronavirus-2020-v-rossii/' ]
 	for i in url_list:
 		url = i
 		html = get_html(url)
