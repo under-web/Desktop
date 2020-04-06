@@ -73,7 +73,7 @@ def main():
 		url = i
 		html = get_html(url)
 		get_page(html)
-
+	input()
 
 
 
