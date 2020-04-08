@@ -54,13 +54,23 @@ def get_page(html):
 		pass
 	print()
 	try:
+		l = 0
 		ross = soup.find('div', class_='col-xs-12 col-md-8').find_all('ul')
 		for i in ross:
-			print(i.text, '\n')
+			if l < 4:
+				print(i.text,'\n')
+			else:
+				break
+			l += 1
 	except:
 		pass
-
-
+	print()
+	try:
+		resp = soup.find('ol').find_all('li')
+		for i in resp:
+			print(i.text.strip())
+	except:
+		pass
 
 def main():
 	
@@ -73,7 +83,7 @@ def main():
 		url = i
 		html = get_html(url)
 		get_page(html)
-	input()
+
 
 
 
