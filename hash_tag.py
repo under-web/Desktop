@@ -6,8 +6,9 @@ import os
 
 
 def write_data(data):
-	with open('data_hash.txt', 'a', encoding='utf8') as f:
-		f.write(data)
+	'функция описывает запись'
+	with open('data_hash.txt', 'a', encoding='utf8') as f: # создает файл если не создан в режиме добавления передает в переменную f
+		f.write(data) # переменной f через функцию write записывем данные data
 
 
 
@@ -17,10 +18,17 @@ def main():
 	for i in data:
 		i = '#' + str(i) + '\n'
 		write_data(i)
-		print(i) 
+	
 	os.system("C:\\Users\\lammer\\Desktop\\data_hash.txt")
 
 
+
+
+
+
+
+if __name__ == '__main__':
+	main()
 
 
 
