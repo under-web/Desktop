@@ -5,16 +5,17 @@ from email.mime.multipart import MIMEMultipart      # Многокомпонен
 from email.mime.text import MIMEText                # Текст/HTML
 from email.mime.image import MIMEImage              # Изображения
 
-addr_from = "@gmail.com"                 # Адресат
-addr_to   = "@gmail.com"                   # Получатель
-password  = "пароль"                                  # Пароль
+
+addr_from = "brahistahrona.mail@gmail.com"                 # Адресат
+addr_to   = "brahistahrona.mail@gmail.com"                   # Получатель
+password  = "noobpass777"                                  # Пароль
 
 msg = MIMEMultipart()                               # Создаем сообщение
 msg['From']    = addr_from                          # Адресат
 msg['To']      = addr_to                            # Получатель
 msg['Subject'] = 'Тест'                   # Тема сообщения
 
-body = "Это тест"
+body = ''
 msg.attach(MIMEText(body, 'plain'))                 # Добавляем в сообщение текст
 
 server = smtplib.SMTP(host='smtp.gmail.com',port=587)           # Создаем объект SMTP
